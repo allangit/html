@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 red_wine=pd.read_csv("winequality-red.csv", sep=";")
 white_wine=pd.read_csv("winequality-white.csv",sep=";")
