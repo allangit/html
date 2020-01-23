@@ -16,5 +16,7 @@ print wine_data.head()
 print "\n\nMaking the dataset with scrambel functions\n\n"
 data1=wine_data.head(10)
 data2=wine_data[300:310]
+data3=wine_data[400:410]
 data_scrambel=pd.concat([data1,data2],axis=0)
 print data_scrambel
+
