@@ -1,0 +1,68 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+gender=["Male","Female"]
+income=["Poor","Middle Class","Rich"]
+
+n=500
+gender_data=[]
+income_data=[]
+
+for i in range(0,n):
+
+	gender_data.append(np.random.choice(gender))
+	income_data.append(np.random.choice(income))
+
+
+height=160+30*np.random.randn(n)
+weight=65+25*np.random.randn(n)
+age=30+12*np.random.randn(n)
+income=18000+3500*np.random.randn(n)
+
+
+data=pd.DataFrame(
+
+	{
+		"gender":gender_data,
+		"Economic Status":income_data,
+		"Height":height,
+		"Weight":weight,
+		"Age":age,
+		"Income":income
+
+	}
+)
+
+print data
+print "\n\nDesarrollando la clase 52 agrupacion de datos por Categorias"
+print "Agrupacion por categorias en python-----------\n\n"
+
+grouped_gender=data.groupby("gender")
+
+for names,groups in grouped_gender:
+
+	print names
+	print groups
+
+double_group=data.groupby(["gender","Economic Status"])
+print len(double_group)
+
+for names,groups in double_group:
+
+        print names
+        print groups
+
+print "\n\nDesarrollando la clase 53 agregacion de  datos\n\n"
+print "Agregacion de datos\n\n"
+
+
+print double_group.sum()
+print "\n\n"
+print double_group.mean()
+print "\n\n"
+print double_group.describe()
+
+
+
+
